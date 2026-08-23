@@ -97,13 +97,9 @@ body{
     margin-bottom:12px;
 }
 
-.help strong{
-    color:var(--brand-dark);
-}
-
 textarea{
     width:100%;
-    height:520px;
+    height:560px;
 
     padding:14px;
 
@@ -144,12 +140,8 @@ textarea{
     font-size:15px;
 }
 
-.settings input[type="text"]{
-    width:190px;
-}
-
-.setInput{
-    width:120px !important;
+.collectionInput{
+    width:180px;
 }
 
 .buttons{
@@ -206,9 +198,9 @@ button{
     position:relative;
 
     padding:
-        9mm
+        7mm
         8mm
-        8mm
+        7mm
         10mm;
 
     overflow:hidden;
@@ -234,8 +226,8 @@ button{
     top:0;
     right:3mm;
 
-    width:25mm;
-    height:190mm;
+    width:27mm;
+    height:196mm;
 
     display:flex;
     flex-direction:column;
@@ -280,7 +272,7 @@ button{
 
 
 /* =========================================================
-   レベル
+   レベル＋集
 ========================================================= */
 
 .sideLevel{
@@ -311,32 +303,6 @@ button{
 
 
 /* =========================================================
-   集・番号
-========================================================= */
-
-.sideSet{
-
-    margin-top:4mm;
-
-    color:#555;
-
-    font-size:11px;
-
-    font-weight:bold;
-
-    writing-mode:vertical-rl;
-
-    text-orientation:mixed;
-
-    line-height:1.4;
-
-    text-align:center;
-
-    flex:none;
-}
-
-
-/* =========================================================
    名前
 ========================================================= */
 
@@ -344,7 +310,7 @@ button{
 
     width:20mm;
 
-    margin-top:5mm;
+    margin-top:7mm;
 
     writing-mode:vertical-rl;
 
@@ -379,13 +345,11 @@ button{
     font-weight:normal;
 
     color:#333;
-
-    border:none !important;
 }
 
 
 /* =========================================================
-   著作権・ロゴ
+   ロゴ
 ========================================================= */
 
 .copyright{
@@ -393,7 +357,7 @@ button{
     position:absolute;
 
     right:7mm;
-    bottom:5mm;
+    bottom:4mm;
 
     width:13mm;
 
@@ -422,22 +386,105 @@ button{
 
 
 /* =========================================================
+   例文エリア
+========================================================= */
+
+.exampleArea{
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:calc(100% - 31mm);
+
+    height:25mm;
+
+    border:1px solid #d8cee2;
+
+    border-top:4px solid var(--accent);
+
+    border-radius:5px;
+
+    background:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10mm;
+
+    overflow:hidden;
+}
+
+.exampleTitle{
+
+    color:var(--accent);
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    writing-mode:vertical-rl;
+
+    flex:none;
+}
+
+.exampleBlock{
+
+    height:20mm;
+
+    display:flex;
+
+    flex-direction:row-reverse;
+
+    align-items:center;
+
+    gap:3mm;
+
+    writing-mode:vertical-rl;
+
+    font-size:13px;
+
+    line-height:1.5;
+
+    white-space:nowrap;
+}
+
+.exampleArrow{
+
+    color:var(--brand);
+
+    font-weight:bold;
+
+    font-size:15px;
+}
+
+
+/* =========================================================
    問題エリア
 ========================================================= */
 
 .studentProblems{
 
-    width:calc(100% - 30mm);
+    position:absolute;
 
-    height:190mm;
+    left:0;
+
+    top:29mm;
+
+    width:calc(100% - 31mm);
+
+    height:164mm;
 
     display:grid;
 
-    grid-template-columns:repeat(4, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
 
-    gap:4mm;
-
-    min-width:0;
+    gap:5mm;
 
     direction:rtl;
 }
@@ -452,7 +499,7 @@ button{
     min-width:0;
 
     width:100%;
-    height:190mm;
+    height:164mm;
 
     border:1px solid #cdbfe0;
 
@@ -465,6 +512,7 @@ button{
     background:#fff;
 
     display:flex;
+
     flex-direction:column;
 
     direction:ltr;
@@ -477,7 +525,7 @@ button{
 
 .problemHeader{
 
-    height:15mm;
+    height:14mm;
 
     flex:none;
 
@@ -504,7 +552,7 @@ button{
     align-items:center;
     justify-content:center;
 
-    font-size:16px;
+    font-size:15px;
     font-weight:bold;
 
     line-height:1;
@@ -525,53 +573,93 @@ button{
 
     display:flex;
 
-    flex-direction:column;
+    flex-direction:row-reverse;
 
-    padding:4mm 4mm 4mm 4mm;
+    padding:4mm 3mm 4mm 3mm;
 }
 
 
 /* =========================================================
-   例文
+   本文
 ========================================================= */
 
-.exampleArea{
+.bodyArea{
 
-    flex:none;
+    width:42%;
 
-    border-bottom:1px dashed #cbbbd9;
+    padding-left:2mm;
 
-    padding-bottom:3mm;
+    display:flex;
 
-    margin-bottom:3mm;
+    flex-direction:column;
+
+    align-items:center;
+
+    min-width:0;
+
+    flex-shrink:0;
 }
 
-.exampleLabel{
+.sectionHeading{
+
+    flex:0 0 auto;
 
     display:inline-block;
 
     color:var(--brand);
 
-    border:1px solid #b9a8cc;
-
-    border-radius:12px;
-
-    padding:1px 7px;
-
     font-size:10px;
 
     font-weight:bold;
 
-    margin-bottom:2mm;
+    border:1px solid #b9a8cc;
+
+    border-radius:12px;
+
+    padding:2px 7px;
+
+    margin-bottom:3mm;
+
+    writing-mode:horizontal-tb;
 }
 
-.exampleText{
+.verticalText{
 
-    font-size:11px;
+    flex:1;
 
-    line-height:1.6;
+    min-height:0;
 
-    color:#555;
+    width:100%;
+
+    writing-mode:vertical-rl;
+
+    text-orientation:mixed;
+
+    display:flex;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    font-family:
+        "UD デジタル 教科書体",
+        "UD Digi Kyokasho",
+        "教科書体",
+        "Yu Kyokasho",
+        "Noto Serif JP",
+        serif;
+
+    font-size:16px;
+
+    line-height:1.65;
+
+    letter-spacing:.03em;
+
+    white-space:pre-wrap;
+
+    overflow:hidden;
+
+    text-align:left;
 }
 
 
@@ -579,25 +667,32 @@ button{
    問い
 ========================================================= */
 
-.questionLabel{
+.questionArea{
 
-    flex:none;
+    width:58%;
 
-    color:var(--brand);
+    padding-left:3mm;
 
-    border:1px solid #b9a8cc;
+    display:flex;
 
-    border-radius:12px;
+    flex-direction:column;
 
-    padding:2px 8px;
+    align-items:center;
 
-    font-size:10px;
+    min-width:0;
 
-    font-weight:bold;
+    flex-shrink:0;
 
-    align-self:center;
+    position:relative;
+}
 
-    margin-bottom:3mm;
+.questionArea .sectionHeading{
+
+    writing-mode:horizontal-tb;
+
+    position:relative;
+
+    z-index:2;
 }
 
 .questionText{
@@ -612,11 +707,25 @@ button{
 
     text-orientation:mixed;
 
-    font-size:15px;
+    display:flex;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    font-family:
+        "UD デジタル 教科書体",
+        "UD Digi Kyokasho",
+        "教科書体",
+        "Yu Kyokasho",
+        "Noto Serif JP",
+        serif;
+
+    font-size:16px;
 
     font-weight:600;
 
-    line-height:1.7;
+    line-height:1.8;
 
     letter-spacing:.03em;
 
@@ -625,79 +734,75 @@ button{
     overflow:hidden;
 
     text-align:left;
-
-    display:flex;
-
-    justify-content:flex-start;
-
-    align-items:center;
 }
 
 
 /* =========================================================
-   答え欄
+   答えを書くための縦書き空欄
+   ※マス目は使用しない
 ========================================================= */
 
-.answerLabel{
-
-    flex:none;
-
-    color:var(--brand);
-
-    border:1px solid #b9a8cc;
-
-    border-radius:12px;
-
-    padding:2px 8px;
-
-    font-size:10px;
-
-    font-weight:bold;
-
-    align-self:center;
-
-    margin-top:3mm;
-
-    margin-bottom:2mm;
-}
-
-.answerWriting{
-
-    height:43mm;
-
-    border:1px solid #8d75a9;
-
-    position:relative;
-
-    background:
-        repeating-linear-gradient(
-            to bottom,
-            transparent 0,
-            transparent 9mm,
-            #d8cbe3 9mm,
-            #d8cbe3 9.3mm
-        );
-
-    flex:none;
-}
-
-.answerWriting::before{
-
-    content:"";
+.answerArea{
 
     position:absolute;
 
-    top:0;
-    bottom:0;
+    left:3mm;
+    right:3mm;
 
-    right:50%;
+    bottom:4mm;
 
-    border-left:1px dashed #d8cbe3;
+    height:38mm;
+
+    border-top:1px dashed #b99ad3;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding-top:3mm;
+}
+
+.answerBlank{
+
+    height:31mm;
+
+    min-width:70%;
+
+    writing-mode:vertical-rl;
+
+    text-orientation:mixed;
+
+    font-size:14px;
+
+    line-height:2;
+
+    text-align:left;
+
+    color:#777;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+}
+
+.answerBlank::before{
+
+    content:"答え";
+
+    display:block;
+
+    color:var(--brand);
+
+    font-weight:bold;
+
+    margin-left:4mm;
 }
 
 
 /* =========================================================
-   教師用ページ
+   教師用
 ========================================================= */
 
 .teacherPage{
@@ -747,15 +852,6 @@ button{
     font-size:11px;
 }
 
-.teacherSet{
-
-    margin-top:1mm;
-
-    color:#777;
-
-    font-size:10px;
-}
-
 
 /* =========================================================
    教師用問題
@@ -763,7 +859,7 @@ button{
 
 .teacherProblems{
 
-    height:118mm;
+    height:135mm;
 
     display:grid;
 
@@ -771,7 +867,7 @@ button{
 
     grid-template-rows:1fr 1fr;
 
-    gap:7mm;
+    gap:8mm;
 }
 
 .teacherProblem{
@@ -780,7 +876,7 @@ button{
 
     border-top:4px solid var(--brand);
 
-    padding:5mm;
+    padding:6mm;
 
     overflow:hidden;
 }
@@ -789,11 +885,11 @@ button{
 
     color:var(--brand);
 
-    font-size:16px;
+    font-size:17px;
 
     font-weight:bold;
 
-    margin-bottom:3mm;
+    margin-bottom:5mm;
 }
 
 .teacherProblemText{
@@ -806,9 +902,9 @@ button{
         "Noto Serif JP",
         serif;
 
-    font-size:11.5px;
+    font-size:12.5px;
 
-    line-height:1.75;
+    line-height:1.85;
 
     white-space:pre-wrap;
 }
@@ -824,13 +920,13 @@ button{
 
     right:15mm;
 
-    top:134mm;
+    bottom:12mm;
 
-    width:118mm;
+    width:95mm;
 
-    height:62mm;
+    height:42mm;
 
-    padding:5mm 7mm;
+    padding:4mm 6mm;
 
     border:2px solid var(--brand);
 
@@ -839,19 +935,17 @@ button{
     background:#faf7fd;
 
     overflow:hidden;
-
-    z-index:5;
 }
 
 .skillGuideTitle{
 
     color:var(--brand);
 
-    font-size:16px;
+    font-size:15px;
 
     font-weight:bold;
 
-    margin-bottom:3mm;
+    margin-bottom:2mm;
 
     padding-bottom:2mm;
 
@@ -860,9 +954,9 @@ button{
 
 .skillGuideLevel{
 
-    color:#F28C28;
+    color:var(--accent);
 
-    font-size:13px;
+    font-size:12px;
 
     font-weight:bold;
 
@@ -871,21 +965,21 @@ button{
 
 .skillGuideText{
 
-    font-size:11.5px;
+    font-size:10.5px;
 
-    line-height:1.7;
+    line-height:1.6;
 
     color:#444;
 }
 
 .skillGuideText strong{
 
-    color:#5A258F;
+    color:var(--brand-dark);
 }
 
 
 /* =========================================================
-   教師用フッター
+   フッター
 ========================================================= */
 
 .teacherFooter{
@@ -957,6 +1051,12 @@ button{
         print-color-adjust:exact;
     }
 
+    .exampleArea{
+
+        -webkit-print-color-adjust:exact;
+        print-color-adjust:exact;
+    }
+
     .skillGuide{
 
         background:#faf7fd !important;
@@ -990,7 +1090,7 @@ button{
     </h1>
 
     <p class="editorLead">
-        「つまり」と「例えば」を往復しながら、具体と抽象を結びつける練習プリントを作ります。
+        具体的な言葉と、それらをまとめる言葉を行き来しながら練習するプリントを作ります。
     </p>
 
 
@@ -1002,14 +1102,12 @@ button{
 
         <div class="help">
 
-            問題1〜問題4と教師用解説を、
+            問題1〜問題4と教師用の内容を、
             <strong>まとめてそのまま貼り付けてください。</strong><br>
 
-            ①具体→抽象　②抽象→具体　③具体→抽象　④抽象→具体
-            のように、必ず「往復」する構成にします。<br><br>
-
-            子どもは答えを穴埋めするのではなく、
-            <strong>「つまり、〜です。」「例えば、〜などです。」まで自分で書きます。</strong>
+            問題1・3は「具体 → 抽象」、
+            問題2・4は「抽象 → 具体」の形にすると、
+            2往復の練習になります。
 
         </div>
 
@@ -1018,55 +1116,61 @@ button{
             id="inputText"
             placeholder="===問題1===
 
+本文
+りんご、バナナ、ぶどう
+
 問題
-りんご、バナナ、ぶどうがあります。
-これらをまとめて言うと何ですか。
-「つまり、〜です。」の形で答えましょう。
+つまり、（　　　　　　　　　　　　　　　　　）。
 
 ===問題2===
 
+本文
+果物
+
 問題
-「果物」とは、例えばどんなものですか。
-「例えば、〜などです。」の形で答えましょう。
+例えば、（　　　　　　　　　　　　　　　　　）などです。
 
 ===問題3===
 
+本文
+犬、猫、うさぎ
+
 問題
-犬、猫、うさぎがいます。
-これらをまとめて言うと何ですか。
-「つまり、〜です。」の形で答えましょう。
+つまり、（　　　　　　　　　　　　　　　　　）。
 
 ===問題4===
 
+本文
+動物
+
 問題
-「動物」とは、例えばどんなものですか。
-「例えば、〜などです。」の形で答えましょう。
+例えば、（　　　　　　　　　　　　　　　　　）などです。
 
 ===教師用===
 
 ①
-答え：
+正解例：
 つまり、果物です。
 
 指導ポイント：
-りんご、バナナ、ぶどうという具体的な言葉を、一つ上のまとまりである「果物」にまとめる。
+・・・
 
 ②
-答え：
+正解例：
 例えば、りんご、バナナ、ぶどうなどです。
 
 指導ポイント：
-「果物」という抽象的なまとまりから、具体的な例を思い浮かべる。
+・・・
 
 ③
-答え：
+正解例：
 つまり、動物です。
 
 指導ポイント：
 ・・・
 
 ④
-答え：
+正解例：
 例えば、犬、猫、うさぎなどです。
 
 指導ポイント：
@@ -1094,6 +1198,7 @@ button{
                 value="具体と抽象 特訓プリント"
             >
 
+
             <label>
                 レベル
             </label>
@@ -1118,13 +1223,14 @@ button{
 
             </select>
 
+
             <label>
                 集
             </label>
 
             <input
-                id="setInput"
-                class="setInput"
+                id="collectionInput"
+                class="collectionInput"
                 type="text"
                 value="第1集"
                 placeholder="第1集"
@@ -1175,7 +1281,7 @@ button{
 
 
     <!-- =================================================
-         生徒用
+         生徒用ページ
     ================================================== -->
 
     <div class="studentPage">
@@ -1183,15 +1289,64 @@ button{
         <div class="studentLayout">
 
 
+            <!-- =========================================
+                 例
+            ========================================== -->
+
+            <div class="exampleArea">
+
+                <div class="exampleTitle">
+                    例
+                </div>
+
+                <div class="exampleBlock">
+
+                    <span>
+                        りんご・バナナ・ぶどう
+                    </span>
+
+                    <span class="exampleArrow">
+                        →
+                    </span>
+
+                    <span>
+                        つまり、果物です。
+                    </span>
+
+                </div>
+
+                <div class="exampleBlock">
+
+                    <span>
+                        果物
+                    </span>
+
+                    <span class="exampleArrow">
+                        →
+                    </span>
+
+                    <span>
+                        例えば、りんご・バナナ・ぶどうなどです。
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================================
+                 問題
+            ========================================== -->
+
             <div
                 class="studentProblems"
                 id="studentProblems"
             ></div>
 
 
-            <!-- =========================
-                 右側サイドバー
-            ========================== -->
+            <!-- =========================================
+                 右側
+            ========================================== -->
 
             <div class="studentSidebar">
 
@@ -1199,7 +1354,7 @@ button{
                     class="sideTitle"
                     id="studentTitle"
                 >
-                    具体と抽象 特訓プリント
+                    具体と抽象
                 </div>
 
                 <div
@@ -1210,8 +1365,8 @@ button{
                 </div>
 
                 <div
-                    class="sideSet"
-                    id="studentSet"
+                    class="sideLevel"
+                    id="studentCollection"
                 >
                     第1集
                 </div>
@@ -1221,7 +1376,7 @@ button{
                     名　　　　前
 
                     <div class="sideNameBlank">
-                        （　　　　　　　　　　　　　　　　　　　　　　　　　　）
+                        （　　　　　　　　　　　）
                     </div>
 
                 </div>
@@ -1244,14 +1399,17 @@ button{
 
 
     <!-- =================================================
-         教師用
+         教師用ページ
     ================================================== -->
 
     <div class="teacherPage">
 
         <div class="teacherHeader">
 
-            <div class="teacherTitle">
+            <div
+                class="teacherTitle"
+                id="teacherTitle"
+            >
                 具体と抽象 特訓プリント　教師用
             </div>
 
@@ -1259,14 +1417,7 @@ button{
                 class="teacherLevel"
                 id="teacherLevel"
             >
-                レベル易
-            </div>
-
-            <div
-                class="teacherSet"
-                id="teacherSet"
-            >
-                第1集
+                レベル易　第1集
             </div>
 
         </div>
@@ -1315,68 +1466,74 @@ button{
 
 
 /* =========================================================
-   今回のサンプル
+   サンプル
 ========================================================= */
 
 const sampleText = `===問題1===
 
+本文
+りんご、バナナ、ぶどう
+
 問題
-りんご、バナナ、ぶどうがあります。
-これらをまとめて言うと何ですか。
-「つまり、〜です。」の形で答えましょう。
+つまり、（　　　　　　　　　　　　　　　　　）。
 
 ===問題2===
 
+本文
+果物
+
 問題
-「果物」とは、例えばどんなものですか。
-「例えば、〜などです。」の形で答えましょう。
+例えば、（　　　　　　　　　　　　　　　　　）などです。
 
 ===問題3===
 
+本文
+犬、猫、うさぎ
+
 問題
-犬、猫、うさぎがいます。
-これらをまとめて言うと何ですか。
-「つまり、〜です。」の形で答えましょう。
+つまり、（　　　　　　　　　　　　　　　　　）。
 
 ===問題4===
 
+本文
+動物
+
 問題
-「動物」とは、例えばどんなものですか。
-「例えば、〜などです。」の形で答えましょう。
+例えば、（　　　　　　　　　　　　　　　　　）などです。
 
 ===教師用===
 
 ①
-答え：
+正解例：
 つまり、果物です。
 
 指導ポイント：
-りんご、バナナ、ぶどうという具体的な言葉を、一つ上のまとまりである「果物」にまとめる。
+「りんご・バナナ・ぶどう」という具体的なものをまとめる言葉を考えます。「果物」という上位の言葉にまとめられれば正解です。
 
 ②
-答え：
+正解例：
 例えば、りんご、バナナ、ぶどうなどです。
 
 指導ポイント：
-「果物」というまとまりから、具体的な例を思い浮かべる。「例えば」を使って、具体例を挙げる。
+「果物」という抽象度の高い言葉から、具体的な例を複数思い出します。できるだけ同じ種類のものを挙げることを意識させます。
 
 ③
-答え：
+正解例：
 つまり、動物です。
 
 指導ポイント：
-犬、猫、うさぎという具体的な言葉に共通する上位の言葉を考える。
+犬・猫・うさぎに共通する言葉を考えます。三つの具体例を一つの言葉でまとめる練習です。
 
 ④
-答え：
+正解例：
 例えば、犬、猫、うさぎなどです。
 
 指導ポイント：
-「動物」というまとまりから、具体的な例を複数思い浮かべる。`;
+「動物」という言葉から、具体的な例を思い出します。「例えば」という言葉を使って具体例を挙げることを意識させます。`;
 
 
 /* =========================================================
-   レベル別「身につけたい力」
+   レベル別 指導内容
 ========================================================= */
 
 const skillGuideData = {
@@ -1384,37 +1541,32 @@ const skillGuideData = {
     "1":{
         level:"レベル易",
         text:
-            "<strong>身近な具体物と、それをまとめる言葉を結びつける力</strong>を身につけます。<br><br>" +
-            "「りんご・バナナ・ぶどう」から「果物」のように、" +
-            "身近で分かりやすい<strong>具体と抽象の関係</strong>を学びます。" +
-            "「つまり」と「例えば」を使って、具体→抽象、抽象→具体を往復します。"
+            "<strong>身近な具体的なものと、それらをまとめる言葉を結びつける力</strong>を身につけます。<br><br>" +
+            "「りんご・バナナ・ぶどう → 果物」のように、身近なものをまとめる言葉を考えます。" +
+            "反対に、「果物 → りんご・バナナ・ぶどう」のように、まとめる言葉から具体例を思い出す練習もします。"
     },
 
     "2":{
         level:"レベルやや易",
         text:
-            "<strong>目に見えるものだけでなく、活動や学習などをまとめる言葉と結びつける力</strong>を身につけます。<br><br>" +
-            "スポーツや教科など、具体物から少し離れた言葉を扱います。" +
-            "具体的な例をまとめたり、抽象的なまとまりから具体例を考えたりする練習をします。"
+            "<strong>目に見えるものだけでなく、学校生活などで使う概念的な言葉と具体例を結びつける力</strong>を身につけます。<br><br>" +
+            "スポーツや教科など、複数の具体例をまとめる言葉を考えたり、まとめる言葉から具体例を挙げたりします。"
     },
 
     "3":{
         level:"レベルやや難",
         text:
-            "<strong>行動や生活の中の具体的な事例を、共通する意味にまとめる力</strong>を身につけます。<br><br>" +
-            "「習慣」「マナー」「礼儀」など、複数の行動をまとめて表す言葉を扱います。" +
-            "具体的な事例から意味をまとめる<strong>具体→抽象</strong>と、" +
-            "抽象的な言葉から具体例を考える<strong>抽象→具体</strong>を往復します。"
+            "<strong>具体的な行動や場面を、習慣・マナー・礼儀などの言葉でまとめる力</strong>を身につけます。<br><br>" +
+            "いくつかの具体的な行動に共通する意味を考え、より抽象的な言葉にまとめます。" +
+            "反対に、抽象的な言葉から具体的な行動を思い出す練習もします。"
     },
 
     "4":{
         level:"レベル難",
         text:
-            "<strong>文章の内容をまとめる、より抽象度の高い言葉と具体的な事例を結びつける力</strong>を身につけます。<br><br>" +
-            "「公共」「主観」など、目に見えない概念的な言葉を扱います。" +
-            "複数の具体的な内容から共通する意味を考えたり、" +
-            "抽象的な言葉から具体的な事例を考えたりする練習を通して、" +
-            "<strong>文章をまとめて理解する力</strong>を育てます。"
+            "<strong>複数の具体的な事例から、より抽象度の高い言葉や考えをまとめる力</strong>を身につけます。<br><br>" +
+            "公共、主観、価値、考え方など、目に見えない抽象的な言葉を扱います。" +
+            "具体的な内容を抽象化するだけでなく、抽象的な言葉から具体例を考える往復練習を行います。"
     }
 
 };
@@ -1449,7 +1601,7 @@ function cleanText(text){
 
 
 /* =========================================================
-   問題部分を取り出す
+   問題部分取得
 ========================================================= */
 
 function getProblemSection(text,number){
@@ -1467,7 +1619,7 @@ function getProblemSection(text,number){
     const contentStart =
         start + startMarker.length;
 
-    let nextMarker = "";
+    let nextMarker;
 
     if(number < 4){
 
@@ -1481,7 +1633,10 @@ function getProblemSection(text,number){
     }
 
     const end =
-        text.indexOf(nextMarker,contentStart);
+        text.indexOf(
+            nextMarker,
+            contentStart
+        );
 
     if(end === -1){
 
@@ -1491,23 +1646,42 @@ function getProblemSection(text,number){
     }
 
     return text
-        .substring(contentStart,end)
+        .substring(
+            contentStart,
+            end
+        )
         .trim();
 }
 
 
 /* =========================================================
-   問題部分を取得
+   本文・問題分離
 ========================================================= */
 
 function parseProblem(section){
 
+    let body = "";
     let question = "";
+
+    const bodyIndex =
+        section.indexOf("本文");
 
     const questionIndex =
         section.indexOf("問題");
 
-    if(questionIndex !== -1){
+    if(
+        bodyIndex !== -1 &&
+        questionIndex !== -1 &&
+        questionIndex > bodyIndex
+    ){
+
+        body =
+            section
+                .substring(
+                    bodyIndex + 2,
+                    questionIndex
+                )
+                .trim();
 
         question =
             section
@@ -1518,11 +1692,13 @@ function parseProblem(section){
 
     }else{
 
-        question =
+        body =
             section.trim();
+
     }
 
     return {
+        body:body,
         question:question
     };
 }
@@ -1568,66 +1744,61 @@ function createStudentProblem(
     );
 
 
-    /* ---------- 内部 ---------- */
+    /* ---------- 本文 ---------- */
 
-    const content =
+    const bodyArea =
         document.createElement("div");
 
-    content.className =
-        "problemContent";
+    bodyArea.className =
+        "bodyArea";
 
 
-    /* ---------- 例文 ---------- */
-
-    const exampleArea =
+    const bodyHeading =
         document.createElement("div");
 
-    exampleArea.className =
-        "exampleArea";
+    bodyHeading.className =
+        "sectionHeading";
+
+    bodyHeading.textContent =
+        "具体";
 
 
-    const exampleLabel =
+    const bodyText =
         document.createElement("div");
 
-    exampleLabel.className =
-        "exampleLabel";
+    bodyText.className =
+        "verticalText";
 
-    exampleLabel.textContent =
-        "例文";
-
-
-    const exampleText =
-        document.createElement("div");
-
-    exampleText.className =
-        "exampleText";
-
-    exampleText.innerHTML =
-        "りんご、バナナ、ぶどう<br>" +
-        "→ つまり、果物です。<br>" +
-        "果物<br>" +
-        "→ 例えば、りんご、バナナ、ぶどうなどです。";
+    bodyText.textContent =
+        data.body;
 
 
-    exampleArea.appendChild(
-        exampleLabel
+    bodyArea.appendChild(
+        bodyHeading
     );
 
-    exampleArea.appendChild(
-        exampleText
+    bodyArea.appendChild(
+        bodyText
     );
 
 
     /* ---------- 問い ---------- */
 
-    const questionLabel =
+    const questionArea =
         document.createElement("div");
 
-    questionLabel.className =
-        "questionLabel";
+    questionArea.className =
+        "questionArea";
 
-    questionLabel.textContent =
-        "問題";
+
+    const questionHeading =
+        document.createElement("div");
+
+    questionHeading.className =
+        "sectionHeading";
+
+    questionHeading.textContent =
+        "答えよう";
 
 
     const questionText =
@@ -1640,43 +1811,54 @@ function createStudentProblem(
         data.question;
 
 
-    /* ---------- 答え ---------- */
-
-    const answerLabel =
-        document.createElement("div");
-
-    answerLabel.className =
-        "answerLabel";
-
-    answerLabel.textContent =
-        "答え";
-
-
-    const answerWriting =
-        document.createElement("div");
-
-    answerWriting.className =
-        "answerWriting";
-
-
-    content.appendChild(
-        exampleArea
+    questionArea.appendChild(
+        questionHeading
     );
 
-    content.appendChild(
-        questionLabel
-    );
-
-    content.appendChild(
+    questionArea.appendChild(
         questionText
     );
 
+
+    /* ---------- 答え欄 ---------- */
+
+    const answerArea =
+        document.createElement("div");
+
+    answerArea.className =
+        "answerArea";
+
+
+    const answerBlank =
+        document.createElement("div");
+
+    answerBlank.className =
+        "answerBlank";
+
+    answerBlank.textContent =
+        "　　　　　　　　　　　　　　　　　";
+
+
+    answerArea.appendChild(
+        answerBlank
+    );
+
+
+    /* ---------- コンテンツ ---------- */
+
+    const content =
+        document.createElement("div");
+
+    content.className =
+        "problemContent";
+
+
     content.appendChild(
-        answerLabel
+        bodyArea
     );
 
     content.appendChild(
-        answerWriting
+        questionArea
     );
 
 
@@ -1688,13 +1870,17 @@ function createStudentProblem(
         content
     );
 
+    card.appendChild(
+        answerArea
+    );
+
 
     return card;
 }
 
 
 /* =========================================================
-   教師用部分を取得
+   教師用取得
 ========================================================= */
 
 function getTeacherSection(text){
@@ -1718,7 +1904,7 @@ function getTeacherSection(text){
 
 
 /* =========================================================
-   教師用問題を分離
+   教師用4問分離
 ========================================================= */
 
 function parseTeacher(text){
@@ -1802,7 +1988,7 @@ function createTeacherProblem(
 
 
 /* =========================================================
-   レベル表示
+   レベル名
 ========================================================= */
 
 function getLevelName(level){
@@ -1821,30 +2007,6 @@ function getLevelName(level){
 
     return levelNames[level]
         || "レベル易";
-}
-
-
-/* =========================================================
-   身につけたい力
-========================================================= */
-
-function updateSkillGuide(level){
-
-    const data =
-        skillGuideData[level]
-        || skillGuideData["1"];
-
-
-    document.getElementById(
-        "skillGuideLevel"
-    ).textContent =
-        data.level;
-
-
-    document.getElementById(
-        "skillGuideText"
-    ).innerHTML =
-        data.text;
 }
 
 
@@ -1888,9 +2050,9 @@ function makePrint(){
         ).value;
 
 
-    const setName =
+    const collection =
         document.getElementById(
-            "setInput"
+            "collectionInput"
         ).value.trim()
         || "第1集";
 
@@ -1910,32 +2072,48 @@ function makePrint(){
 
 
     document.getElementById(
-        "studentSet"
+        "studentCollection"
     ).textContent =
-        setName;
+        collection;
 
 
     /* ---------- 教師用表示 ---------- */
 
     document.getElementById(
-        "teacherLevel"
+        "teacherTitle"
     ).textContent =
-        getLevelName(level);
+        title + "　教師用";
 
 
     document.getElementById(
-        "teacherSet"
+        "teacherLevel"
     ).textContent =
-        setName;
+        getLevelName(level)
+        + "　"
+        + collection;
 
 
-    /* ---------- 身につけたい力 ---------- */
+    /* ---------- 指導内容 ---------- */
 
-    updateSkillGuide(level);
+    const guide =
+        skillGuideData[level]
+        || skillGuideData["1"];
+
+
+    document.getElementById(
+        "skillGuideLevel"
+    ).textContent =
+        guide.level;
+
+
+    document.getElementById(
+        "skillGuideText"
+    ).innerHTML =
+        guide.text;
 
 
     /* =====================================================
-       生徒用
+       生徒用4問
     ===================================================== */
 
     const studentProblems =
@@ -1946,12 +2124,9 @@ function makePrint(){
     studentProblems.innerHTML = "";
 
 
-    const problemCount = 4;
-
-
     for(
         let i = 1;
-        i <= problemCount;
+        i <= 4;
         i++
     ){
 
@@ -1985,7 +2160,7 @@ function makePrint(){
 
 
     /* =====================================================
-       教師用
+       教師用4問
     ===================================================== */
 
     const teacherProblems =
@@ -2006,7 +2181,7 @@ function makePrint(){
 
         .slice(
             0,
-            problemCount
+            4
         )
 
         .forEach(
@@ -2027,7 +2202,7 @@ function makePrint(){
 
 
 /* =========================================================
-   最初からサンプル表示
+   起動時
 ========================================================= */
 
 window.addEventListener(
