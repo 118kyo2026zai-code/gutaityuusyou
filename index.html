@@ -206,11 +206,6 @@ button{
     overflow:hidden;
 }
 
-
-/* =========================================================
-   生徒用メイン
-========================================================= */
-
 .studentLayout{
     width:100%;
     height:100%;
@@ -381,7 +376,6 @@ button{
     font-weight:normal;
 
     color:#333;
-
 }
 
 
@@ -619,7 +613,7 @@ button{
 
 
 /* =========================================================
-   問い
+   答え欄
 ========================================================= */
 
 .questionArea{
@@ -691,7 +685,7 @@ button{
 
 
 /* =========================================================
-   最初の2問の薄いヒント
+   1・2の「つまり」「例えば」
 ========================================================= */
 
 .traceHint{
@@ -962,6 +956,7 @@ button{
         -webkit-print-color-adjust:exact;
         print-color-adjust:exact;
     }
+
 }
 
 </style>
@@ -1005,6 +1000,7 @@ button{
 
         </div>
 
+
         <textarea
             id="inputText"
             placeholder="===問題1===
@@ -1013,7 +1009,7 @@ button{
 果物
 
 問題
-（例えば、りんご、バナナ、ぶどうなどです。）
+（例えば、　　　　　　　　　　　などです。）
 
 ===問題2===
 
@@ -1021,7 +1017,7 @@ button{
 りんご、バナナ、ぶどう
 
 問題
-（つまり、果物です。）
+（つまり、　　　　　　　　　　　です。）
 
 ===問題3===
 
@@ -1029,7 +1025,7 @@ button{
 文房具
 
 問題
-（例えば、えんぴつ、消しゴム、定規などです。）
+（　　　　　　　　　　　　　　　　　　　　　）
 
 ===問題4===
 
@@ -1037,7 +1033,7 @@ button{
 えんぴつ、消しゴム、定規
 
 問題
-（つまり、文房具です。）
+（　　　　　　　　　　　　　　　　　　　　　）
 
 ===教師用===
 
@@ -1053,21 +1049,21 @@ button{
 つまり、果物です。
 
 指導ポイント：
-複数の具体例を一つにまとめる言葉を考える。
+りんご、バナナ、ぶどうをまとめる言葉を考える。
 
 ③
 正解例：
 例えば、えんぴつ、消しゴム、定規などです。
 
 指導ポイント：
-「文房具」に当てはまる具体例を考える。
+「文房具」という抽象的な言葉に当てはまる具体例を考える。
 
 ④
 正解例：
 つまり、文房具です。
 
 指導ポイント：
-複数の具体例に共通する言葉を考える。"
+えんぴつ、消しゴム、定規をまとめる言葉を考える。"
         ></textarea>
 
     </div>
@@ -1091,6 +1087,7 @@ button{
                 value="具体と抽象 特訓プリント"
             >
 
+
             <label>
                 レベル
             </label>
@@ -1109,11 +1106,8 @@ button{
                     レベルやや難
                 </option>
 
-                <option value="4">
-                    レベル難
-                </option>
-
             </select>
+
 
             <label>
                 集
@@ -1172,7 +1166,7 @@ button{
 
 
     <!-- ===============================
-         生徒用
+         生徒用ページ
     ================================= -->
 
     <div class="studentPage">
@@ -1195,6 +1189,7 @@ button{
                     特訓プリント
                 </div>
 
+
                 <div
                     class="sideLevel"
                     id="studentLevel"
@@ -1202,12 +1197,14 @@ button{
                     レベル易
                 </div>
 
+
                 <div
                     class="sideCollection"
                     id="studentCollection"
                 >
                     第1集
                 </div>
+
 
                 <div class="sideName">
 
@@ -1237,7 +1234,7 @@ button{
 
 
     <!-- ===============================
-         教師用
+         教師用ページ
     ================================= -->
 
     <div class="teacherPage">
@@ -1301,6 +1298,25 @@ button{
 
 /* =========================================================
    今回のサンプル
+
+   ★重要
+   生徒用の答え欄には答えを書かない。
+
+   1：
+   抽象 → 具体
+   「例えば」だけ薄く表示
+
+   2：
+   具体 → 抽象
+   「つまり」だけ薄く表示
+
+   3：
+   抽象 → 具体
+   カッコだけ
+
+   4：
+   具体 → 抽象
+   カッコだけ
 ========================================================= */
 
 const sampleText = `===問題1===
@@ -1309,7 +1325,7 @@ const sampleText = `===問題1===
 果物
 
 問題
-（例えば、りんご、バナナ、ぶどうなどです。）
+（例えば、　　　　　　　　　　　　　などです。）
 
 ===問題2===
 
@@ -1317,7 +1333,7 @@ const sampleText = `===問題1===
 りんご、バナナ、ぶどう
 
 問題
-（つまり、果物です。）
+（つまり、　　　　　　　　　　　　　です。）
 
 ===問題3===
 
@@ -1325,7 +1341,7 @@ const sampleText = `===問題1===
 文房具
 
 問題
-（例えば、えんぴつ、消しゴム、定規などです。）
+（　　　　　　　　　　　　　　　　　　　　　　　　　）
 
 ===問題4===
 
@@ -1333,7 +1349,7 @@ const sampleText = `===問題1===
 えんぴつ、消しゴム、定規
 
 問題
-（つまり、文房具です。）
+（　　　　　　　　　　　　　　　　　　　　　　　　　）
 
 ===教師用===
 
@@ -1349,21 +1365,21 @@ const sampleText = `===問題1===
 つまり、果物です。
 
 指導ポイント：
-「りんご、バナナ、ぶどう」という具体的な言葉をまとめる抽象的な言葉を考える。
+「りんご、バナナ、ぶどう」という具体的な言葉をまとめる言葉を考える。
 
 ③
 正解例：
 例えば、えんぴつ、消しゴム、定規などです。
 
 指導ポイント：
-「文房具」という言葉に当てはまる具体例を考える。
+「文房具」という抽象的な言葉に当てはまる具体例を考える。
 
 ④
 正解例：
 つまり、文房具です。
 
 指導ポイント：
-複数の具体例に共通する言葉を考える。`;
+「えんぴつ、消しゴム、定規」をまとめる言葉を考える。`;
 
 
 /* =========================================================
@@ -1376,7 +1392,7 @@ const skillGuideData = {
         level:"レベル易",
         text:
             "<strong>身近な具体語と、それらをまとめる言葉を結びつける力</strong>を育てます。<br>" +
-            "「果物」「動物」「食べ物」など、子どもが比較的イメージしやすい言葉を使って、" +
+            "「果物」「動物」「食べ物」など、子どもがイメージしやすい言葉を使って、" +
             "具体と抽象を往復する練習をします。"
     },
 
@@ -1392,13 +1408,6 @@ const skillGuideData = {
         text:
             "<strong>習慣・マナー・礼儀など、行動や考え方をまとめる力</strong>を育てます。<br>" +
             "目に見える物ではなく、複数の行動に共通する意味を考え、具体と抽象を往復します。"
-    },
-
-    "4":{
-        level:"レベル難",
-        text:
-            "<strong>公共・主観など、より抽象度の高い言葉と具体的な内容を結びつける力</strong>を育てます。<br>" +
-            "複数の具体的な事例をまとめるだけでなく、文章の内容から抽象的な意味を考える練習につなげます。"
     }
 
 };
@@ -1523,7 +1532,9 @@ function parseProblem(section){
 
     }else{
 
-        body = section.trim();
+        body =
+            section.trim();
+
     }
 
     return {
@@ -1534,13 +1545,25 @@ function parseProblem(section){
 
 
 /* =========================================================
-   最初の2問だけ「つまり・例えば」を薄くする
-   問題文の（　）の中にある場合もそのまま処理
+   問題1・2の「つまり」「例えば」だけ薄くする
+
+   それ以外の文字は普通の濃さ。
+
+   例：
+   （例えば、　　　　　　　　　などです。）
+
+   ↓
+
+   （
+   例えば ← 薄い
+   、　　　　　　　　　などです。
+   ）
 ========================================================= */
 
 function formatTraceQuestion(text){
 
-    const wrapper = document.createElement("span");
+    const wrapper =
+        document.createElement("span");
 
     const match =
         text.match(
@@ -1549,28 +1572,47 @@ function formatTraceQuestion(text){
 
     if(!match){
 
-        wrapper.textContent = text;
+        wrapper.textContent =
+            text;
 
         return wrapper;
     }
 
+
     const before =
-        document.createTextNode(match[1]);
+        document.createTextNode(
+            match[1]
+        );
+
 
     const hint =
         document.createElement("span");
 
-    hint.className = "traceHint";
+    hint.className =
+        "traceHint";
 
     hint.textContent =
         match[2];
 
-    const after =
-        document.createTextNode(match[3]);
 
-    wrapper.appendChild(before);
-    wrapper.appendChild(hint);
-    wrapper.appendChild(after);
+    const after =
+        document.createTextNode(
+            match[3]
+        );
+
+
+    wrapper.appendChild(
+        before
+    );
+
+    wrapper.appendChild(
+        hint
+    );
+
+    wrapper.appendChild(
+        after
+    );
+
 
     return wrapper;
 }
@@ -1592,7 +1634,7 @@ function createStudentProblem(
         "studentProblem";
 
 
-    /* ---------- 番号 ---------- */
+    /* ---------- 問題番号 ---------- */
 
     const header =
         document.createElement("div");
@@ -1609,6 +1651,7 @@ function createStudentProblem(
 
     numberBox.textContent =
         number;
+
 
     header.appendChild(
         numberBox
@@ -1680,8 +1723,19 @@ function createStudentProblem(
 
 
     /*
-       問題1・2だけ
-       「つまり」「例えば」を薄く表示
+       ★ここが今回の重要部分
+
+       1・2
+       → 入力された
+         「つまり」「例えば」だけ薄くする。
+
+       3・4
+       → 入力されたものを
+         そのまま表示する。
+
+       したがって、
+       3・4は「（　　）」だけを入力すれば
+       本当にカッコだけになる。
     */
 
     if(number <= 2){
@@ -1693,13 +1747,6 @@ function createStudentProblem(
         );
 
     }else{
-
-        /*
-           問題3・4は入力された問題文を
-           そのまま表示。
-           つまり・例えばもAI側で書かなければ
-           表示されない。
-        */
 
         questionText.textContent =
             data.question;
@@ -1715,13 +1762,14 @@ function createStudentProblem(
     );
 
 
-    /* ---------- 内容 ---------- */
+    /* ---------- 問題内容 ---------- */
 
     const content =
         document.createElement("div");
 
     content.className =
         "problemContent";
+
 
     content.appendChild(
         bodyArea
@@ -1746,7 +1794,7 @@ function createStudentProblem(
 
 
 /* =========================================================
-   教師用取得
+   教師用部分取得
 ========================================================= */
 
 function getTeacherSection(text){
@@ -1864,9 +1912,7 @@ function getLevelName(level){
 
         "2":"レベルやや易",
 
-        "3":"レベルやや難",
-
-        "4":"レベル難"
+        "3":"レベルやや難"
 
     };
 
@@ -1909,6 +1955,7 @@ function makePrint(){
         document.getElementById(
             "inputText"
         ).value;
+
 
     text =
         cleanText(text);
@@ -1974,7 +2021,9 @@ function makePrint(){
         + collection;
 
 
-    updateSkillGuide(level);
+    updateSkillGuide(
+        level
+    );
 
 
     /* =====================================================
@@ -1986,7 +2035,9 @@ function makePrint(){
             "studentProblems"
         );
 
-    studentProblems.innerHTML = "";
+
+    studentProblems.innerHTML =
+        "";
 
 
     for(
@@ -2021,6 +2072,7 @@ function makePrint(){
             )
 
         );
+
     }
 
 
@@ -2033,11 +2085,15 @@ function makePrint(){
             "teacherProblems"
         );
 
-    teacherProblems.innerHTML = "";
+
+    teacherProblems.innerHTML =
+        "";
 
 
     const teacherData =
-        parseTeacher(text);
+        parseTeacher(
+            text
+        );
 
 
     teacherData
@@ -2045,7 +2101,10 @@ function makePrint(){
         .slice(0,4)
 
         .forEach(
-            function(text,index){
+            function(
+                text,
+                index
+            ){
 
                 teacherProblems.appendChild(
 
@@ -2074,7 +2133,9 @@ window.addEventListener(
         ).value =
             sampleText;
 
+
         makePrint();
+
     }
 );
 
