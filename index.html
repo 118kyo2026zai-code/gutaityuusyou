@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 /* =========================================================
    基本
 ========================================================= */
@@ -305,7 +306,7 @@ button{
 
 
 /* =========================================================
-   集
+   プリント番号
 ========================================================= */
 
 .sideCollection{
@@ -963,6 +964,7 @@ button{
         print-color-adjust:exact;
     }
 }
+
 </style>
 </head>
 
@@ -1114,15 +1116,15 @@ button{
 
 
             <label>
-                集
+                プリント
             </label>
 
             <input
                 id="collectionInput"
                 class="collectionInput"
                 type="text"
-                value="第1集"
-                placeholder="第1集"
+                value="その１"
+                placeholder="その１"
             >
 
         </div>
@@ -1206,7 +1208,7 @@ button{
                     class="sideCollection"
                     id="studentCollection"
                 >
-                    第1集
+                    その１
                 </div>
 
 
@@ -1253,7 +1255,7 @@ button{
                 class="teacherLevel"
                 id="teacherLevel"
             >
-                レベル易　第1集
+                レベル易　その１
             </div>
 
         </div>
@@ -1369,7 +1371,7 @@ const sampleText = `===問題1===
 つまり、果物です。
 
 指導ポイント：
-「りんご、バナナ、ぶどう」という具体的な言葉をまとめる言葉を考える。
+「りんご、バナナ、ぶどう」という具体的な言葉をまとめる抽象的な言葉を考える。
 
 ③
 正解例：
@@ -1727,15 +1729,13 @@ function createStudentProblem(
 
 
     /*
-       ★ここが今回の重要部分
+       ★ここが重要
 
        1・2
-       → 入力された
-         「つまり」「例えば」だけ薄くする。
+       → 「つまり」「例えば」だけ薄く表示。
 
        3・4
-       → 入力されたものを
-         そのまま表示する。
+       → 入力されたものをそのまま表示。
 
        したがって、
        3・4は「（　　）」だけを入力すれば
@@ -1994,7 +1994,7 @@ function makePrint(){
         document.getElementById(
             "collectionInput"
         ).value.trim()
-        || "第1集";
+        || "その１";
 
 
     /* ---------- 表示 ---------- */
